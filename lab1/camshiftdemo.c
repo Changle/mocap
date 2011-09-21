@@ -107,7 +107,6 @@ int main( int argc, char** argv )
     cvNamedWindow( "Histogram", 1 );
     cvNamedWindow( "CamShiftDemo", 1 );
     cvNamedWindow( "Canvas", 1 );
-//    cvMoveWindow( "Canva", 500,500);
     cvSetMouseCallback( "CamShiftDemo", on_mouse, 0 );
     cvCreateTrackbar( "Vmin", "CamShiftDemo", &vmin, 256, 0 );
     cvCreateTrackbar( "Vmax", "CamShiftDemo", &vmax, 256, 0 );
@@ -229,6 +228,7 @@ int main( int argc, char** argv )
     cvDestroyWindow("CamShiftDemo");
     cvDestroyWindow("Canvas");
     cvReleaseImage(&canvas);
+    cvReleaseImage(&image);
 
     return 0;
 }
